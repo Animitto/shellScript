@@ -1,0 +1,40 @@
+#!/bin/sh
+# Written By C.Perrenoud 7-1-2016
+# 
+
+# Greetings with prompt to username
+  echo "Welcome to CP Automate Shell script. Let's se  you  up with an account!"
+  echo "Please insert a username:"
+
+#Create directory and users with sudo permission
+  read username
+  echo "Your username is $username"
+  useradd -m -d /home/$username  $username -G sudo
+
+#Prompt to type password for the account
+  echo "Type in a password for you account"
+  passwd $username
+
+#Confirms user directory
+  cd /home/$username
+  echo "Your home directory is"
+  pwd
+
+#Add a custom message at login
+  echo "Would you like to customize a login message? (Press enter for no)"
+  read message
+
+#Change Hostname
+  echo "Please insert a hostname (Press enter for none!)."
+  read hostname
+
+  echo "$hostname" > /etc/hostname
+  echo "Hostname will change upon the next reboot!"
+
+  cp /home/$username/.bashrc /home/$username/.bashrc.bak
+  echo 'echo "$message"' > greet.txt
+  cat /home/$username/.bashrc.bak /home/$username/greet.txt > .bashrc
+  rm greet.txt
+
+#Login into new account
+  su $username
