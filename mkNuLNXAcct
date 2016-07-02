@@ -1,5 +1,6 @@
 #!/bin/sh
 # Written By C.Perrenoud 7-1-2016
+# Very First shell script
 # 
 
 # Greetings with prompt to username
