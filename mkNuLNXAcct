@@ -3,7 +3,7 @@
 # 
 
 # Greetings with prompt to username
-  echo "Welcome to CP Automate Shell script. Let's se  you  up with an account!"
+  echo "Welcome to CP Automate Shell script. Let's set up a new account!"
   echo "Please insert a username:"
 
 #Create directory and users with sudo permission
