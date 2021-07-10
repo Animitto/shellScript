@@ -1,4 +1,4 @@
 # shellScript
 
-Shell script that I wrote during my shell scripting learning journey!
-Automastion for various simple SysAdmin task that I perform regularly.
+Shell script that I wrote to automate Linux account setup!
+Includes automation for various simple SysAdmin task that I perform regularly.
